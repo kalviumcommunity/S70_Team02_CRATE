@@ -8,6 +8,12 @@ A modern, interactive analytics dashboard web application for tracking crate dis
 - **Interactive Data Visualizations**: Dynamic charts powered by modern web technologies.
 - **Fast Performance**: Built with Vite and modern ES modules for lightning-fast loads.
 
+## 🤖 AI & ML Capabilities
+
+- **Retention Prediction Model**: Evaluates behavioral features (such as initial response time, number of review cycles, changes requested, and total merge duration) to calculate a **Return Probability Score** and risk level for individual contributors.
+- **Automated Friction Detection**: Flags anomalous onboarding patterns, such as prolonged response delays or excessive review bottlenecks that correlate with lower retention.
+- **Smart Recommendations**: Dynamically generates prioritized, high-impact suggestions to help maintainers improve community onboarding health.
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
