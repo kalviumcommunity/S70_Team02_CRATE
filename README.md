@@ -14,6 +14,13 @@ A modern, interactive analytics dashboard web application for tracking crate dis
 - **Automated Friction Detection**: Flags anomalous onboarding patterns, such as prolonged response delays or excessive review bottlenecks that correlate with lower retention.
 - **Smart Recommendations**: Dynamically generates prioritized, high-impact suggestions to help maintainers improve community onboarding health.
 
+## ⚙️ Backend & Database
+
+- **GitHub Integration & OAuth**: Secure authentication via GitHub OAuth and API integration to fetch repository issues, pull requests, reviews, and contributor profiles.
+- **Data Processing Pipeline**: Aggregates raw GitHub events and reconstructs individual contributor journeys across milestones.
+- **Relational Database**: Uses PostgreSQL to reliably store repository data, contributor stats, and calculated onboarding metrics.
+- **REST APIs**: Powers the frontend dashboard with structured endpoints for metrics, insights, and journey tracking.
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
