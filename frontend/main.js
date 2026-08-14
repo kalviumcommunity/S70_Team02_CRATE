@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CRATE Analytics - Interactive Application Logic & Custom SVG Chart Engine
+   CRATE Analytics - Interactive Application Logic & Custom SVG Chart Engine.
    ========================================================================== */
 
 // --- Application State ---
@@ -71,7 +71,7 @@ function getDateLabels(timeRange) {
 function generateDataSet(repo, timeRange, metric) {
   const dates = getDateLabels(timeRange);
   const cfg = METRIC_CONFIG[metric];
-  
+
   // Repo scale multiplier
   let repoMultiplier = 1.0;
   if (repo === 'crate-cli') repoMultiplier = 0.45;
