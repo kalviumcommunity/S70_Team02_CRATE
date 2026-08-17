@@ -10,7 +10,7 @@ const state = {
   theme: 'light'
 };
 
-// Metric Configurations & Data Generator Generators
+// Metric Configurations & Data Generators
 const METRIC_CONFIG = {
   active: {
     title: 'Active Contributors',
