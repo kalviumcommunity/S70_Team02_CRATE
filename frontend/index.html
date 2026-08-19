@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRATE — Understand why contributors return</title>
-  <meta name="description" content="Analyze activity, friction, and behavior to build a thriving open-source community. Stop guessing, start measuring.">
-  
+  <meta name="description"
+    content="Analyze activity, friction, and behavior to build a thriving open-source community. Stop guessing, start measuring.">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="light-theme">
-  <!-- Navigation Header -->
+  <!-- Navigation Headerr -->
   <header class="site-header">
     <div class="header-container">
       <a href="#" class="brand-logo">
         <div class="logo-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 8L12 3L3 8V16L12 21L21 16V8Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 3V12M12 12L21 8M12 12L3 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17 5.5L7.5 10.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M21 8L12 3L3 8V16L12 21L21 16V8Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M12 3V12M12 12L21 8M12 12L3 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M17 5.5L7.5 10.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
           </svg>
         </div>
         <span class="brand-name">CRATE</span>
@@ -36,13 +41,22 @@
 
       <div class="header-actions">
         <button id="theme-toggle-btn" class="icon-btn" title="Toggle Theme" aria-label="Toggle theme">
-          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
         </button>
         <button id="login-btn" class="nav-link-btn">Login</button>
         <button class="btn btn-github connect-github-trigger">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
           <span>Connect GitHub</span>
         </button>
@@ -56,13 +70,15 @@
       <div class="hero-container">
         <h1 class="hero-title">Understand why<br>contributors return.</h1>
         <p class="hero-subtitle">
-          Analyze activity, friction, and behavior to build a thriving open-source community. Stop guessing, start measuring.
+          Analyze activity, friction, and behavior to build a thriving open-source community. Stop guessing, start
+          measuring.
         </p>
-        
+
         <div class="hero-cta-group">
           <button class="btn btn-github btn-lg connect-github-trigger">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
             </svg>
             <span>Connect GitHub</span>
           </button>
@@ -84,7 +100,9 @@
             <div class="custom-dropdown" id="repo-dropdown">
               <button class="dropdown-trigger" id="repo-trigger">
                 <span id="selected-repo">CRATE-Core-Repo</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
               <div class="dropdown-menu" id="repo-menu">
                 <div class="dropdown-item selected" data-value="CRATE-Core-Repo">CRATE-Core-Repo</div>
@@ -99,7 +117,12 @@
             <div class="custom-dropdown" id="time-dropdown">
               <button class="dropdown-trigger time-trigger" id="time-trigger">
                 <span id="selected-time">Last 30 Days</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
               </button>
               <div class="dropdown-menu right-aligned" id="time-menu">
                 <div class="dropdown-item" data-value="7d">Last 7 Days</div>
@@ -116,7 +139,9 @@
           <div class="metric-tab active" data-metric="active">
             <div class="metric-header">
               <span class="metric-title">Active Contributors</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </div>
             <div class="metric-value-row">
               <span class="metric-value" id="val-active">1,248</span>
@@ -127,7 +152,9 @@
           <div class="metric-tab" data-metric="merge">
             <div class="metric-header">
               <span class="metric-title">PR Merge Rate</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </div>
             <div class="metric-value-row">
               <span class="metric-value" id="val-merge">68%</span>
@@ -138,7 +165,9 @@
           <div class="metric-tab" data-metric="review">
             <div class="metric-header">
               <span class="metric-title">Avg. Time to First Review</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </div>
             <div class="metric-value-row">
               <span class="metric-value" id="val-review">14h</span>
@@ -149,7 +178,9 @@
           <div class="metric-tab" data-metric="churn">
             <div class="metric-header">
               <span class="metric-title">Churned (30d)</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </div>
             <div class="metric-value-row">
               <span class="metric-value" id="val-churn">42</span>
@@ -186,15 +217,18 @@
 
             <!-- Preceding Period Curve -->
             <path id="preceding-area-path" class="preceding-area" d="" fill="url(#prevGradient)" />
-            <path id="preceding-line-path" class="preceding-line" d="" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6" />
+            <path id="preceding-line-path" class="preceding-line" d="" fill="none" stroke="#9CA3AF" stroke-width="1.8"
+              stroke-dasharray="4 4" opacity="0.6" />
 
             <!-- Current Period Area & Line -->
             <path id="current-area-path" class="chart-area" d="" fill="url(#chartGradient)" />
-            <path id="current-line-path" class="chart-line" d="" fill="none" stroke="#5850EC" stroke-width="2.5" stroke-linecap="round" />
+            <path id="current-line-path" class="chart-line" d="" fill="none" stroke="#5850EC" stroke-width="2.5"
+              stroke-linecap="round" />
 
             <!-- Interactive Crosshair & Point -->
             <g id="interactive-group" class="interactive-group" style="display: none;">
-              <line id="crosshair-v" x1="0" y1="20" x2="0" y2="270" stroke="#5850EC" stroke-width="1" stroke-dasharray="3 3" />
+              <line id="crosshair-v" x1="0" y1="20" x2="0" y2="270" stroke="#5850EC" stroke-width="1"
+                stroke-dasharray="3 3" />
               <circle id="point-current" r="5" fill="#5850EC" stroke="#FFFFFF" stroke-width="2" />
               <circle id="point-preceding" r="4" fill="#9CA3AF" stroke="#FFFFFF" stroke-width="1.5" />
             </g>
@@ -236,7 +270,10 @@
 
           <button id="open-retention-btn" class="footer-link-btn">
             View retention report
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </button>
         </div>
       </div>
@@ -255,9 +292,9 @@
           <div class="capability-card">
             <div class="card-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"/>
-                <line x1="12" y1="20" x2="12" y2="4"/>
-                <line x1="6" y1="20" x2="6" y2="14"/>
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
               </svg>
             </div>
             <h3 class="card-title">Activity Tracking</h3>
@@ -270,9 +307,9 @@
           <div class="capability-card" id="card-friction">
             <div class="card-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                <line x1="12" y1="9" x2="12" y2="13"/>
-                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
               </svg>
             </div>
             <h3 class="card-title">Friction Analysis</h3>
@@ -285,8 +322,8 @@
           <div class="capability-card interactive-capability" id="card-ai-insights">
             <div class="card-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8v8M8 12h8"/>
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v8M8 12h8" />
               </svg>
             </div>
             <div class="card-header-row">
@@ -302,7 +339,7 @@
           <div class="capability-card">
             <div class="card-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2">
-                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
               </svg>
             </div>
             <h3 class="card-title">Retention Funnels</h3>
@@ -324,7 +361,8 @@
       <div class="modal-header">
         <div class="modal-icon-badge">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
         </div>
         <h3 class="modal-title">Connect GitHub Repositories</h3>
@@ -448,7 +486,9 @@
       <button class="modal-close" data-close="ai-modal">&times;</button>
       <div class="modal-header">
         <div class="ai-badge-header">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5850EC" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
           <span>CRATE AI Copilot</span>
         </div>
         <h3 class="modal-title">Automated Friction & Retention Insights</h3>
@@ -460,21 +500,24 @@
             <div class="insight-icon">⚠️</div>
             <div class="insight-text">
               <span class="insight-head">First PR Review Bottleneck</span>
-              <p>PRs with initial review times &gt; 18 hours experience a <strong>42% drop-off</strong> in subsequent contributions. Recommend assigning automated triage bot for instant greeting.</p>
+              <p>PRs with initial review times &gt; 18 hours experience a <strong>42% drop-off</strong> in subsequent
+                contributions. Recommend assigning automated triage bot for instant greeting.</p>
             </div>
           </div>
           <div class="insight-item success">
             <div class="insight-icon">💡</div>
             <div class="insight-text">
               <span class="insight-head">Good First Issue High Conversion</span>
-              <p>Contributors starting with <code>good-first-issue</code> tagged items have <strong>2.4x higher 90-day retention</strong>. Maintain a pool of at least 15 active beginner issues.</p>
+              <p>Contributors starting with <code>good-first-issue</code> tagged items have <strong>2.4x higher 90-day
+                  retention</strong>. Maintain a pool of at least 15 active beginner issues.</p>
             </div>
           </div>
           <div class="insight-item info">
             <div class="insight-icon">🚀</div>
             <div class="insight-text">
               <span class="insight-head">CI Build Time Impact</span>
-              <p>Failed CI runs on first-time PRs correlate with a 30% reduction in resubmission rate. Adding pre-commit hooks reduces CI friction by 60%.</p>
+              <p>Failed CI runs on first-time PRs correlate with a 30% reduction in resubmission rate. Adding pre-commit
+                hooks reduces CI friction by 60%.</p>
             </div>
           </div>
         </div>
@@ -504,7 +547,8 @@
             <li>✓ 30-day data retention</li>
             <li>✓ Community support</li>
           </ul>
-          <button class="btn btn-secondary full-width connect-github-trigger" data-close="pricing-modal">Get Started</button>
+          <button class="btn btn-secondary full-width connect-github-trigger" data-close="pricing-modal">Get
+            Started</button>
         </div>
         <div class="pricing-card featured">
           <span class="popular-badge">Most Popular</span>
@@ -518,7 +562,8 @@
             <li>✓ AI Insights & Automated Triage</li>
             <li>✓ Priority Slack support</li>
           </ul>
-          <button class="btn btn-github full-width connect-github-trigger" data-close="pricing-modal">Start 14-Day Free Trial</button>
+          <button class="btn btn-github full-width connect-github-trigger" data-close="pricing-modal">Start 14-Day Free
+            Trial</button>
         </div>
         <div class="pricing-card">
           <span class="plan-name">Enterprise</span>
@@ -543,4 +588,5 @@
 
   <script type="module" src="./main.js"></script>
 </body>
+
 </html>
