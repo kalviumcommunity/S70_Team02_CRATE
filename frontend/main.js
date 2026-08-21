@@ -303,14 +303,29 @@ function setupEventListeners() {
   });
 
   // Theme Toggle
+  const savedTheme = localStorage.getItem('crate_theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    document.body.classList.remove('light-theme');
+    state.theme = 'dark';
+  } else {
+    document.body.classList.add('light-theme');
+    document.body.classList.remove('dark-theme');
+    state.theme = 'light';
+  }
+
   const themeBtn = document.getElementById('theme-toggle-btn');
   themeBtn.addEventListener('click', () => {
     if (document.body.classList.contains('dark-theme')) {
       document.body.classList.remove('dark-theme');
+      document.body.classList.add('light-theme');
       state.theme = 'light';
+      localStorage.setItem('crate_theme', 'light');
     } else {
       document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
       state.theme = 'dark';
+      localStorage.setItem('crate_theme', 'dark');
     }
   });
 
@@ -332,10 +347,6 @@ function setupEventListeners() {
     showToast('CRATE Integration Docs loaded in tab!');
   });
 
-  document.getElementById('login-btn').addEventListener('click', () => {
-    openModal('github-modal');
-  });
-
   document.getElementById('confirm-connect-btn').addEventListener('click', () => {
     closeModal('github-modal');
     showToast('GitHub organization connected & synced successfully!');
@@ -348,6 +359,77 @@ function setupEventListeners() {
       closeModal(modalId);
     });
   });
+
+  // Check & Render Authentication State
+  checkAuthState();
+}
+
+// --- Auth Session Management ---
+function checkAuthState() {
+  const container = document.getElementById('auth-user-container');
+  if (!container) return;
+
+  const rawUser = localStorage.getItem('crate_user');
+  if (!rawUser) {
+    container.innerHTML = `<a href="login.html" id="login-btn" class="nav-link-btn">Login</a>`;
+    return;
+  }
+
+  try {
+    const user = JSON.parse(rawUser);
+    const initials = user.avatarInitials || (user.name ? user.name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase() : 'AR');
+
+    container.innerHTML = `
+      <div class="user-profile-wrapper" id="user-profile-wrapper">
+        <button class="user-profile-btn" id="user-profile-btn" aria-label="User account menu">
+          <span class="user-avatar-badge">${initials}</span>
+          <span class="user-name">${user.name}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="user-dropdown-menu" id="user-dropdown-menu">
+          <div class="user-dropdown-header">
+            <span class="user-dropdown-name">${user.name}</span>
+            <span class="user-dropdown-email">${user.email}</span>
+          </div>
+          <button class="user-dropdown-item" id="user-menu-repos">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span>Connected Repos</span>
+          </button>
+          <button class="user-dropdown-item danger" id="user-menu-signout">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    const profileBtn = document.getElementById('user-profile-btn');
+    const dropdownMenu = document.getElementById('user-dropdown-menu');
+
+    profileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('show');
+    });
+
+    document.getElementById('user-menu-repos').addEventListener('click', () => {
+      dropdownMenu.classList.remove('show');
+      openModal('github-modal');
+    });
+
+    document.getElementById('user-menu-signout').addEventListener('click', () => {
+      localStorage.removeItem('crate_user');
+      showToast('Signed out of CRATE Analytics session.');
+      checkAuthState();
+    });
+
+  } catch (err) {
+    console.error('Failed to parse user auth session', err);
+    localStorage.removeItem('crate_user');
+  }
 }
 
 function setupDropdown(containerId, labelId, onSelect) {
@@ -406,9 +488,22 @@ function showToast(message) {
   }, 3200);
 }
 
-// --- Initialization ---
+// --- Initialization & Navigation Parameters ---
+function handleURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  const modalParam = params.get('modal');
+  if (modalParam === 'pricing') {
+    openModal('pricing-modal');
+  } else if (modalParam === 'github') {
+    openModal('github-modal');
+  } else if (modalParam === 'ai') {
+    openModal('ai-modal');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderChart();
   setupChartInteractivity();
   setupEventListeners();
+  handleURLParams();
 });
