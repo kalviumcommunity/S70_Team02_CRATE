@@ -1,0 +1,56 @@
+{
+  "repository": "expressjs/express",
+  "overviewMetrics": {
+    "totalContributors": 1248,
+    "firstTimeContributors": 320,
+    "returningContributors": 96,
+    "retentionRate": "30.0%"
+  },
+  "mlFeatures": {
+    "onboardingScore": {
+      "total": 74,
+      "breakdown": {
+        "documentationClarity": 82,
+        "responseTime": 57,
+        "issueAccessibility": 80,
+        "prExperience": 71
+      }
+    },
+    "aiAnalysis": {
+      "frictionPoints": [
+        "Slow first responses (average > 48 hours)",
+        "High number of review cycles for first-timers"
+      ],
+      "recommendations": [
+        {
+          "priority": "HIGH",
+          "text": "Prioritize reviewing first-time contributor PRs within 48 hours."
+        },
+        {
+          "priority": "MEDIUM",
+          "text": "Add 'good first issue' labels to open tickets."
+        }
+      ]
+    },
+    "recentPredictions": [
+      {
+        "author": "devUser01",
+        "mergeTimeHours": 36.5,
+        "willReturn": true,
+        "probability": 0.82
+      },
+      {
+        "author": "coder_newb",
+        "mergeTimeHours": 120.0,
+        "willReturn": false,
+        "probability": 0.15
+      },
+      {
+        "author": "patch_maker",
+        "mergeTimeHours": 12.5,
+        "willReturn": true,
+        "probability": 0.95
+      }
+    ]
+  }
+}
