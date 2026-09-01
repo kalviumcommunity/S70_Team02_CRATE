@@ -1,0 +1,31 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Repository {
+  id                    String        @id @default(uuid())
+  githubRepo            String        @unique // e.g. "expressjs/express"
+  totalContributors     Int           @default(0)
+  firstTimeContributors Int           @default(0)
+  returningContributors Int           @default(0)
+  retentionRate         Float         @default(0.0)
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+  predictions           Prediction[]
+}
+
+model Prediction {
+  id               String     @id @default(uuid())
+  repositoryId     String
+  repository       Repository @relation(fields: [repositoryId], references: [id], onDelete: Cascade)
+  author           String
+  mergeTimeHours   Float
+  willReturn       Boolean
+  probability      Float
+  createdAt        DateTime   @default(now())
+}
